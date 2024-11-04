@@ -1,0 +1,157 @@
+// app/cart/cart.scss ou pages/cart/cart.scss
+.cart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+   padding: 20px;
+  }
+
+  .cart-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+
+    h1 {
+      margin: 0 auto;
+      font-weight: 500;
+      color: white;
+    }
+
+  }
+
+  .cart-insideflex {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+     flex-direction: column; // 1 coluna para celular
+    }
+  }
+  
+  .checkout-button {
+    background-color: #FF8310;
+    text-align: center;
+    padding: 1rem 1rem;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+
+  
+    &:hover {
+      background-color: #e4760f;
+    }
+  }
+  
+  .cart-items {
+    margin: 20px 0;
+  }
+
+  
+  .back-button {
+    background-color: #373737;
+    padding: .7rem .9rem;
+    border-radius: 100%;
+
+  }
+  
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 2rem;
+    background-color: #2B2B2B;
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 10px;
+
+    img {
+      width: 161px;
+      height: 161px;
+      border-radius: 8px;
+    }
+
+    .item-price {
+      font-weight: 600;
+      font-size: 22px;
+      color: #FFF;
+    }
+
+    .remove-button {
+
+      background-color: #FF8310;
+      border: none;
+      color: #ff4d4f;
+      font-size: 1.2rem;
+      border-radius: 100%;
+      cursor: pointer;
+      padding: .9rem 1rem;
+
+      img {
+        width: 25.8px;
+        height: 25.8px;
+      }
+    }
+
+    .remove-button:hover {
+      color: #ff2d2e;
+    }
+  }
+  
+  .cart-desc {
+    display: flex;
+    gap: .5rem;
+    flex-direction: column;
+
+    h3 {
+      color: #FFF;
+      font-weight: 500;
+    }
+
+    .item-description {
+      color: #CCCCCC;
+      font-weight: 300;
+    }
+
+    .quantity-control {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+      background-color: #232323;
+      max-width: fit-content;
+      color: white;
+      padding: .5rem 1rem;
+      border-radius: 8px;
+      
+
+      .quantity-button {
+        background-color: #232323;
+        border: none;
+        color: white;
+        font-size: 1rem;
+        padding: 0.5rem;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .quantity-button:hover {
+        background-color: #333;
+      }
+
+      span {
+        font-size: 1rem;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .cart-total {
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+  }

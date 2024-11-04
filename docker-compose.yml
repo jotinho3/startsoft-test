@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: starsoft-test
+    ports:
+      - '4000:4000' # Porta mapeada na máquina host:contêiner
+    environment:
+      - NODE_ENV=production
+      - PORT=4000 # Porta desejada para a aplicação Next.js

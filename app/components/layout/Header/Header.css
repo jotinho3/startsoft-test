@@ -1,0 +1,34 @@
+.header {
+  padding: 2rem 4rem;
+  background-color: #232323;
+  color: #fff;
+  border-bottom: rgba(255, 255, 255, 0.2117647059) 1px solid;
+}
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__icon, .header__shopcart {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: relative;
+}
+.header__cartCount {
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  background-color: #FF8310;
+  color: white;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}/*# sourceMappingURL=Header.css.map */

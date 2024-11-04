@@ -1,0 +1,106 @@
+@charset "UTF-8";
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+}
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1rem;
+  border-radius: 8px;
+  padding: 30px;
+  background-color: #191A20;
+  color: #fff;
+}
+.card img {
+  border-radius: 8px;
+  margin: 10px auto;
+}
+
+.productDescription {
+  font-weight: 300;
+  font-size: 12px;
+  color: #CCCCCC;
+}
+
+.addToCartButton {
+  background-color: #FF8310;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 20px 26px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Poppins";
+}
+
+.addToCartButton:hover {
+  background-color: #dc7311;
+}
+
+.loadMoreButton {
+  font-family: "Poppins";
+  margin-top: 20px;
+  padding: 20px 20px;
+  background-color: #393939;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 30%;
+}
+@media (max-width: 768px) {
+  .loadMoreButton {
+    width: 60%;
+  }
+}
+
+.loadMoreButton:hover {
+  background-color: #2a2a2a;
+}
+
+/* Barra de progresso */
+.progress-container {
+  width: 30%;
+  background-color: #333;
+  height: 8px;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 5rem;
+  overflow: hidden;
+}
+@media (max-width: 768px) {
+  .progress-container {
+    width: 60%;
+  }
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #FF8310;
+  width: 0%; /* Inicialmente zero, será atualizado dinamicamente */
+  transition: width 0.3s ease; /* Transição suave para o preenchimento */
+}
+@media (max-width: 768px) {
+  .progress-bar {
+    width: 60%;
+  }
+}/*# sourceMappingURL=page.css.map */

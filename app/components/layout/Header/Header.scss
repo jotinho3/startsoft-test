@@ -1,0 +1,40 @@
+// components/Header.module.scss
+
+.header {
+  padding: 2rem 4rem;
+  background-color: #232323;
+  color: #fff;
+  border-bottom: #FFFFFF36 1px solid;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icon,
+  &__shopcart {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative; // Adiciona posição relativa para o contêiner do carrinho
+  }
+
+  &__cartCount {
+    position: absolute; // Posição absoluta para sobrepor o ícone
+    top: -5px; // Ajuste conforme necessário para alinhar ao topo
+    right: -10px; // Ajuste conforme necessário para alinhar à direita
+    background-color: #FF8310; // Cor de fundo do círculo
+    color: white;
+    border-radius: 50%; // Faz com que o elemento seja um círculo
+    width: 24px; // Tamanho do círculo
+    height: 24px; // Tamanho do círculo
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px; // Tamanho da fonte
+    font-weight: bold; // Negrito para o número
+  }
+}

@@ -1,85 +1,37 @@
-import Image from "next/image";
-import type { ReactNode } from "react";
-import { StoreProvider } from "./StoreProvider";
-import { Nav } from "./components/Nav";
+'use client'
 
-import "./styles/globals.css";
-import styles from "./styles/layout.module.css";
+import './layout.scss'
+import Header from './components/layout/Header/Header'
+import Footer from './components/layout/Footer/Footer'
+import { ReactNode } from 'react'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { Provider } from 'react-redux'
+import store from '../lib/store' // ajuste o caminho conforme necessário
 
-interface Props {
-  readonly children: ReactNode;
+type LayoutProps = {
+  children: ReactNode
 }
 
-export default function RootLayout({ children }: Props) {
+// Instancia um QueryClient fora do componente para evitar recriação em cada renderização
+const queryClient = new QueryClient()
+
+export default function RootLayout({ children }: LayoutProps) {
   return (
-    <StoreProvider>
-      <html lang="en">
-        <body>
-          <section className={styles.container}>
-            <Nav />
-
-            <header className={styles.header}>
-              <Image
-                src="/logo.svg"
-                className={styles.logo}
-                alt="logo"
-                width={100}
-                height={100}
-              />
-            </header>
-
-            <main className={styles.main}>{children}</main>
-
-            <footer className={styles.footer}>
-              <span>Learn </span>
-              <a
-                className={styles.link}
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                React
-              </a>
-              <span>, </span>
-              <a
-                className={styles.link}
-                href="https://redux.js.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Redux
-              </a>
-              <span>, </span>
-              <a
-                className={styles.link}
-                href="https://redux-toolkit.js.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Redux Toolkit
-              </a>
-              <span>, </span>
-              <a
-                className={styles.link}
-                href="https://react-redux.js.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                React Redux
-              </a>
-              ,<span> and </span>
-              <a
-                className={styles.link}
-                href="https://reselect.js.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Reselect
-              </a>
-            </footer>
-          </section>
-        </body>
-      </html>
-    </StoreProvider>
-  );
+    <Provider store={store}>
+    <html lang="pt-BR">
+      <head>
+        <title>Meu Projeto Next.js</title>
+        <meta name="description" content="Descrição do site" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
+      <body>
+        <QueryClientProvider client={queryClient}>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </QueryClientProvider>
+      </body>
+    </html>
+    </Provider>
+  )
 }
